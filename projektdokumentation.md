@@ -14,44 +14,51 @@
 
 # 0 Ihr Projekt
 
-✍️ Beschreiben Sie Ihr Projekt in einem griffigen Satz.
+✍️ Glücksrad Wortratespiel bei welchem Redewendungen in einem Gitter erraten müssen.
 
 # 1 Analyse
 
 ✍️ Beschreiben Sie, auf welchem Tier Sie die dynamischen Elemente der Anwendung unterbringen möchten:
 
-* Tier 1 (Presentation): ...
-* Tier 2 (Webserver):
-* Tier 3 (Application Server):
-* Tier 4 (Dataserver):
+* Tier 1 (Presentation): Glückspiel anzeigen
+* Tier 2 (Webserver): Eingaben validieren
+* Tier 3 (Application Server): Funktionen der Glücksrades, auswertung.
+* Tier 4 (Dataserver): Benutezrdaten speichern, Phrasen und Rätselwörter anlegen, ändern und löschen.
 
 # 2 Technologie
 
 ✍️ Beschreiben Sie für dieselben Tiers, welche Programmiersprache bzw. Technologie Sie verwenden möchten.
 
+Tier 1 (Presentation): Next.js, CSS, HTML
+Tier 2 (Webserver): Next.js
+Tier 3 (Application Server): Next.js
+Tier 4 (Dataserver): Firebase
+
 # 3 Datenbank
 
 ✍️ Wie steuern Sie Ihre Datenbank an? Wie ist das Interface aufgebaut? 
 
+
+
 # 4.1 User Stories
-
-✍️ Formulieren Sie klare Anforderungen in der Form von User Stories (*„als … möchte ich … damit …“*) und zu jeder Anforderung mindestens einen dazugehörigen Testfall (in Kapitel 4.2). 
-
-✍️ Formulieren Sie weitere, eigene Anforderungen und Testfälle, wie Sie Ihre Applikation erweitern möchten. Geben Sie diesen statt einer Nummer einen Buchstaben (`A`, `B`, etc.)
 
 | US-№ | Verbindlichkeit | Typ  | Beschreibung                       |
 | ---- | --------------- | ---- | ---------------------------------- |
-| 1    |                 |      | Als ein 🤷‍♂️ möchte ich 🤷‍♂️, damit 🤷‍♂️ |
-| ...  |                 |      |                                    |
-
-✍️ Jede User Story hat eine ganzzahlige Nummer (1, 2, 3 etc. oder Zahl), eine Verbindlichkeit (Muss oder Kann?), und einen Typ (Funktional, Qualität, Rand). 
+| A    |Muss               |Funktional      |Als Benutzer möchte ich das Glücksrad drehen können um das Spiel zu spielen|
+| B    |Muss               |Funktional      |Als Benutzer möchte ich meine Gewinne einlösen|
+| C    |Muss               |Funktional      |Als Administrator möchte ich Phrasen und Wörter bearbeiten|
+| D    |Muss               |Qualität        |Als Benutzer möchte ich eine übersichtliche GUI haben, damit ich mich zurechtfinden kann|
+| E    |Muss               |Rand            |Als Benutzer möchte ich auf dem Liederboard sehen|
 
 # 4.2 Testfälle
 
 | TC-№ | Vorbereitung | Eingabe | Erwartete Ausgabe |
 | ---- | ------------ | ------- | ----------------- |
-| 1.1  |              |         |                   |
-| ...  |              |         |                   |
+| A.1  |Benutzer angemeldet|Rad drehen|Preis wird angezeigt|
+| A.2  |Kein Guthaben|Versuchen das Glücksrad drehen|Glücksrad wird nicht gedreht|
+| B.1  |Preis gewonnen |Gewinn einlösen|Gewinn wird eingelöst|
+| C.1  |Als Administrator angemeldet|Wort hinzufuegen|Wort wird hinzugefuegt|
+| C.2  |Als Administrator angemeldet|Phrase hinzufuegen|Phrase wird hinzugefuegt|
 
 ✍️ Die Nummer hat das Format `N.m`, wobei `N` die Nummer der User Story ist, die der Testfall abdeckt, und `m` von `1` an nach oben gezählt. Beispiel: Der dritte Testfall, der die zweite User Story abdeckt, hat also die Nummer `2.3`.
 
