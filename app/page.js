@@ -1,26 +1,30 @@
 "use client";
 import React, { useState } from 'react';
+import Link from 'next/link'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import dbWrite from 'JS/dbWrite.js'
-const inter = Inter({ subsets: ['latin'] })
+import db from "JS/dbInitialize.js"
 
 export default function Home() {
-  const [text, setText] = useState("")
-  console.log(text)
+    const [name, setName] = useState("")
+    const [password, setPassword] = useState("")
 
-  function WriteInDB(){
-    const write = dbWrite(text);
-  }
-  
-  return (
-    <main style={{color: 'black'}}>
-      <div>
-        <form>
-          <input type="text" id="test" name="test" value={text} onChange={newText => setText(newText.target.value)} />
-          <button type="submit" onClick={WriteInDB}>Submit</button>
-        </form>
-      </div>
+    function addUser(){
+        const add = addUser(name, password);
+    }
+
+    return(
+        <main style={{color: 'black'}}>
+            <h1><Link href="/gamePage.js">Game Page</Link></h1>
+
+            <form>
+                <label>Name</label> <br/>
+                <input type="text" id="name" name="name" value={name} onChange={newText => setName(newText.target.value)} /> <br/>
+                <label>Password</label> <br/>
+                <input type="text" id="password" name="password" value={password} onChange={newText => setPassword(newText.target.value)} /> <br/>
+                <button type="submit" onClick={addUser()}>Login</button>
+            </form>
     </main>
-  )
+    )
 }
