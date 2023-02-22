@@ -17,21 +17,23 @@ export default function Index() {
         if (name.trim() !== "" && password.trim() !== "") {
 
             const querySnapshot = await db.collection("Login Data").where("Name", "==", name).where("Password", "==", password).get();
-            
+
             //User exists
-            if (!querySnapshot.empty) { 
+            if (!querySnapshot.empty) {
                 setUserExists(true);
                 router.push({
                     pathname: '/game',
                     query: { name, password },
                 });
-            //User doesn't exis    
-            } else {                    
-                dbAddUser(name, password);
-                router.push({
-                    pathname: '/game',
-                    query: { name, password },
-                });
+            //User doesn't exist   
+            } else {
+                if (window.confirm("Are you sure you want to create a new account?")) {
+                    dbAddUser(name, password);
+                    router.push({
+                        pathname: '/game',
+                        query: { name, password },
+                    });
+                }
             }
         }
     }

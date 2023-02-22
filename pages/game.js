@@ -2,15 +2,21 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image'
-import dbWrite from 'JS/dbWrite.js'
+import dbAddData from '@/JS/dbAddData.js'
 
 export default function game() {
   const [text, setText] = useState("")
   const router = useRouter();
-  const { name, password } = router.query;
+  
 
-  function WriteInDB() {
-    const write = dbWrite();
+  //User Data
+  const { name, password } = router.query;
+  const [money, setMoney] = useState(1000);
+  const [rang, setRang] = useState('');
+  const [rounds, setRounds] = useState(0);
+
+  function addData() {
+    dbAddData(name, );
   }
 
   return (
