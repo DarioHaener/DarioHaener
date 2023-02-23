@@ -6,7 +6,7 @@ import db from "JS/dbInitialize.js";
 import dbAddUser from '../JS/dbAddUser';
 
 export default function Index() {
-    const [name, setName] = useState("");
+    const [name, setName] = useState(db.collection('User Data').where);
     const [password, setPassword] = useState("");
     const router = useRouter();
 
