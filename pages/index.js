@@ -8,7 +8,6 @@ import dbAddUser from '../JS/dbAddUser';
 export default function Index() {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
-    const [userExists, setUserExists] = useState(false);
     const router = useRouter();
 
     //Check if user is in Database
@@ -20,7 +19,6 @@ export default function Index() {
 
             //User exists
             if (!querySnapshot.empty) {
-                setUserExists(true);
                 router.push({
                     pathname: '/game',
                     query: { name, password },
