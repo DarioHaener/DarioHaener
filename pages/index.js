@@ -21,19 +21,20 @@ export default function Index() {
             //Admin exists
             if (!querySnapshot.empty) {
                 router.push({
-                    pathname: '/game',
-                    query: { name, password },
+                    pathname: '/admin',
                 });
             }
         }
     }
 
+    //Return to login screen
     function moveToGame(){
         router.push({
             pathname: '/game',
             query: { name: userName, password },
         });
     }
+
 
     return (
         <main style={{ color: 'black' }}>
