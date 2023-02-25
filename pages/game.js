@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import wordList from '../JS/wordList.js';
 import dbRead from '../JS/dbRead.js';
 import dbAddData from '../JS/dbAddData.js';
 import db from '../JS/dbInitialize.js';
@@ -14,6 +13,9 @@ export default function Game() {
   const [letter, setLetter] = useState('');
   const [vLetter, setVLetter] = useState('');
   const [word, setWord] = useState('');
+  const [leaderboard, setLeaderboard] = useState([]);
+  const usedPhrases = [];
+  const [wordList, setWordList] = useState([]);
 
   const [textColor, setTextColor] = useState('black');
   const [reward, setReward] = useState(0);
@@ -24,13 +26,13 @@ export default function Game() {
   // User data
   const { name, password } = router.query;
   const [money, setMoney] = useState(1000);
-  const [lives, setLives] = useState(5);
+  const [lives, setLives] = useState(3);
   const [rounds, setRounds] = useState(0);
 
   // Game over
   useEffect(() => {
     if (lives <= 0) {
-      //addData();
+      addData();
     }
 
     if (phrase.length === guessedLetter) {
@@ -51,6 +53,7 @@ export default function Game() {
     }
   }, [lives, empty, guessedLetter]);
 
+  //Phrase update
   useEffect(() => {
     setEmpty([]);
     for (let i = 0; i < phrase.length; i++) {
@@ -58,15 +61,18 @@ export default function Game() {
     }
   }, [phrase]);
 
-  useEffect(() =>{
+  //Money update
+  useEffect(() => {
 
-    if(money < 0){
+    if (money < 0) {
       setMoney(0);
+      addData();
     }
   }, [money]);
 
+  //After spin
   useEffect(() => {
-    if(reward === 0){
+    if (reward === 0) {
       const wordButton = document.getElementById('wordButton');
       wordButton.disabled = true;
       const letterButton = document.getElementById('letterButton');
@@ -76,7 +82,7 @@ export default function Game() {
       const spin = document.getElementById('spin');
       spin.disabled = false;
     }
-    else{
+    else {
       const wordButton = document.getElementById('wordButton');
       wordButton.disabled = false;
       const letterButton = document.getElementById('letterButton');
@@ -86,27 +92,48 @@ export default function Game() {
     }
   }, [reward])
 
+  useEffect(() => {
+    updateLeaderboard();
+
+    const fetchData = async () => {
+      const querySnapshot = await db.collection('Phrasen').get();
+      const words = [];
+      querySnapshot.forEach((doc) => {
+        words.push(doc.data());
+      });
+      setWordList(words);
+    };
+    fetchData();
+  }, []);
+
   // Add to leaderboard
-  function addData() {
-    dbAddData(name, money, new Date(), rounds);
+  async function addData() {
+    await dbAddData(name, money, rounds);
+    window.location.reload();
   }
 
   // Start by creating new word
   function createWord() {
+    if (wordList.length > 0) {
     spin.disabled = false;
     startButton.disabled = true;
 
-    const randomWord = wordList[getRandomInt(wordList.length)];
+    let randomWord = '';
+
+    do{
+      randomWord = wordList[getRandomInt(wordList.length)];
+    } while (usedPhrases.includes(randomWord.word));
+
     setPhrase(randomWord.word);
     setHint(randomWord.hint);
+    usedPhrases.push(randomWord.word);
     setRounds((prevRounds) => prevRounds += 1);
+  }
   }
 
   // Letter guessing
   function guess() {
     let correctGuess = false;
-
-    console.log(phrase.length + "|" + guessedLetter);
 
     for (let i = 0; i < phrase.length; i++) {
       if (letter.toLowerCase() === phrase[i] || vLetter.toLocaleLowerCase() === phrase[i]) {
@@ -119,10 +146,10 @@ export default function Game() {
     }
     if (!correctGuess) {
       if (!usedLetters.includes(letter)) {
-        if(letter === ''){
+        if (letter === '') {
           setUsedLetters((prevEmpty) => [...prevEmpty, vLetter]);
         }
-        else if(vLetter === ''){
+        else if (vLetter === '') {
           setUsedLetters((prevEmpty) => [...prevEmpty, letter]);
         }
       }
@@ -139,8 +166,13 @@ export default function Game() {
   function wordGuess() {
     if (word.toLowerCase() === phrase) {
       setEmpty([...phrase]);
-      setMoney(money + reward*(phrase.length-guessedLetter));
+      setMoney(money + reward * (phrase.length - guessedLetter));
       setGuessedLetters(phrase.length);
+      makeTextGreen();
+    }
+    else{
+      setLives(lives - 1);
+      makeTextRed();
     }
     setWord('');
   }
@@ -157,11 +189,27 @@ export default function Game() {
     }
   }
 
-  function vowal(){
+  //Leaderboard
+  async function updateLeaderboard() {
+    const querySnapshot = await db.collection("Leaderboard")
+      .orderBy("Geldbetrag", "desc")
+      .get();
+
+    const leaderboardArray = [];
+    querySnapshot.forEach((doc) => {
+      leaderboardArray.push(doc.data());
+    });
+
+    setLeaderboard(leaderboardArray);
+  }
+
+  //Vowal purchase
+  function vowal() {
     setMoney(money - vowalCost);
     guess();
   }
 
+  //Wrong guess color
   function makeTextRed() {
     setTextColor('red');
     setTimeout(() => {
@@ -169,13 +217,14 @@ export default function Game() {
     }, 500);
   }
 
+  //Correct guess color
   function makeTextGreen() {
     setTextColor('green');
     setTimeout(() => {
       setTextColor('black');
     }, 500);
   }
-  
+
   //Random number for wordlist
   function getRandomInt(max) {
     var rnd = Math.floor(Math.random() * max);
@@ -194,21 +243,33 @@ export default function Game() {
       {/* User data -------------------------------------------------------------------------------------------------*/}
 
       <div style={{ display: 'flex' }}>
-        <div style={{ backgroundColor: 'grey', width: '15%', padding: '2% 1%', borderRadius: '10px', paddingBottom: '3%', marginRight: '25%' }}>
+        <div style={{ backgroundColor: 'grey', width: '16%', padding: '2% 1%', borderRadius: '10px', paddingBottom: '3%', marginRight: '25%' }}>
           <div style={{ marginLeft: '35%', marginBottom: '5%' }}>
             <button onClick={logout}>Logout</button>
           </div>
+
           <h1>Welcome, {name}!</h1>
           <li><a>Money: {money}</a></li>
           <li><a>Lives: {lives}</a></li>
           <li><a>Rounds: {rounds}</a></li>
+          <br />
+          <button onClick={addData}>End Game</button>
           <hr />
+          {/* Leaderboard */}
           <h1>Leaderboard</h1>
+          <div style={{ height: '520px', overflowY: 'scroll' }}>
+            {leaderboard.map((item, index) => (
+              <div key={index + 1} style={{ display: 'inline-block', marginRight: '10px', fontSize: '16px', border: '1px solid', padding: '5px', marginTop: '5%', borderRadius: '10px' }}>
+                <a>{"#" + (index + 1) + " | Name: " + item.Name + " | Money: " + item.Geldbetrag + " | Rounds: " + item.Spielrunden + " | Date: " + item.Zeitpunkt}</a>
+                <br />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/*Game -----------------------------------------------------------------------------------------------------*/}
 
-        <div name='game' style={{ backgroundColor: 'grey', width: '15%', padding: '2% 1%', borderRadius: '10px', marginTop: '10%' }}>
+        <div name='game' style={{ backgroundColor: 'grey', width: '15%', padding: '2% 1%', borderRadius: '10px', marginTop: '10%', height: '500px' }}>
           <div style={{ marginBottom: '10%' }}>
 
             <div>
@@ -216,7 +277,7 @@ export default function Game() {
             </div>
 
             <button id='spin' onClick={spinWheel}>Spin</button>
-            <a>{reward}</a>
+            <a> Reward: {reward}</a>
           </div>
 
           <div>
@@ -243,29 +304,35 @@ export default function Game() {
           <a>C:</a>
           <input value={letter} onChange={newText => setLetter(newText.target.value)} onKeyPress={event => {
             const keyPressed = event.key.toLowerCase();
-              if (!/[bcdfghjklmnpqrstvwxyz]/.test(keyPressed)) {
-                event.preventDefault();
-              }
-            }} type={'text'} maxLength={1} style={{ width: '10%', marginLeft: '5%' }} />
+            if (!/[bcdfghjklmnpqrstvwxyz]/.test(keyPressed)) {
+              event.preventDefault();
+            }
+          }} type={'text'} maxLength={1} style={{ width: '10%', marginLeft: '5%' }} />
 
           <button id="letterButton" onClick={guess}>OK</button>
 
-          <a style={{marginLeft:'5%'}}>V:</a>
+          <a style={{ marginLeft: '5%' }}>V:</a>
 
           <input value={vLetter} onChange={newText => setVLetter(newText.target.value)} onKeyPress={event => {
             const keyPressed = event.key.toLowerCase();
-              if (!/[aeiou]/.test(keyPressed)) {
-                event.preventDefault();
-              }
-            }} type={'text'} maxLength={1} style={{ width: '10%', marginLeft: '5%' }} />
+            if (!/[aeiou]/.test(keyPressed)) {
+              event.preventDefault();
+            }
+          }} type={'text'} maxLength={1} style={{ width: '10%', marginLeft: '5%' }} />
 
           <button id="vocalButton" onClick={vowal}>Purchase</button>
 
           <br />
-          <div style={{ marginTop: '5%' }}>
+          <a>Wrong letters: </a>
+          <div style={{ marginTop: '2%' }}>
             {usedLetters.map((item) => (
               <a style={{ display: 'inline-block', marginRight: '5px', fontSize: '15px', border: '1px solid', padding: '3px' }}>{item}</a>
             ))}
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <a style={{ fontSize: 'small' }}>C = Consonant, V = Vowel</a>
+            <br />
+            <a style={{ fontSize: 'small' }}>(V can be purchased for 150.-)</a>
           </div>
         </div>
       </div>
