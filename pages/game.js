@@ -135,6 +135,10 @@ export default function Game() {
   function guess() {
     let correctGuess = false;
 
+    if(letter.trim() == '' && vLetter.trim() == ''){
+      return;
+    }
+
     for (let i = 0; i < phrase.length; i++) {
       if (letter.toLowerCase() === phrase[i] || vLetter.toLocaleLowerCase() === phrase[i]) {
         setEmpty((prevEmpty) => [...prevEmpty.slice(0, i), phrase[i], ...prevEmpty.slice(i + 1)]);
@@ -164,6 +168,11 @@ export default function Game() {
 
   // Word guessing
   function wordGuess() {
+
+    if(word.trim() == ''){
+      return;
+    }
+
     if (word.toLowerCase() === phrase) {
       setEmpty([...phrase]);
       setMoney(money + reward * (phrase.length - guessedLetter));
