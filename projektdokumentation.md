@@ -52,7 +52,8 @@ Mithilfe der Firebase Firestore dokumentation konnte ich die Datenbank in einem 
 | F    |Muss               |Funktional      |Als Administrator möchte ich mich mit einem login anmelden.|
 | G    |Muss               |Funktional      |Als Benutzer möchte ich den korrekten Geldbetrag bekommen, wenn ich das Wort richtig rate.|
 | H    |Muss               |Funktional      |Als Benutzer möchte ich das jetzige Spiel immer das Jetzige Spiel beenden können und die Daten auf dem Leaderboard anzeigen lassen.|
-| I    |Muss               |Funktional      |Als Administrator möchte ich gewisse Leaderboard Einträge löschen kennen.|
+| I    |Muss               |Funktional      |Als Administrator möchte ich gewisse Leaderboard Einträge löschen können.|
+| J    |Muss               |Funktional      |Als Benutzer möchte ich Vokale kaufen können.|
 
 # 4.2 Testfälle
 
@@ -68,6 +69,7 @@ Mithilfe der Firebase Firestore dokumentation konnte ich die Datenbank in einem 
 | E.1 | Benutzer angemeldet | - | Leaderboard wird immer dargestellt |
 | F.1 | Noch nicht angemeldet | Richtiges Admin Passwort und Name eingegeben | Als Admin angemeldet  |
 | G.1 | Spiel gestartet  | Richtiges Wort geraten | Korrekter Geldbetrag wird zum Kontostand hinzugefügt |
+| G.2 | Spiel gestartet  | Falsches Wort geraten | Korrekter Geldbetrag wird vom Kontostand abgezogen |
 | H.1 | Spiel gestartet | "End Game" drücken| Daten werden in das Leaderboard übernommen |
 | I.1 | Als Administrator angemeldet | "DELETE" bei Leaderboard gedrückt| Leaderboard Eingabe wird gelöscht |
 
@@ -132,6 +134,7 @@ YouTube: https://youtu.be/wNLdfM9rYpk
 | E.1  |   27.2.23    |      OK    |       Dario Haener |
 | F.1  |   27.2.23    |      OK    |       Dario Haener |
 | G.1  |   27.2.23    |      OK    |       Dario Haener |
+| G.2  |   27.2.23    |      OK    |       Dario Haener |
 | H.1  |   27.2.23    |      OK    |       Dario Haener |
 | I.1  |   27.2.23    |      OK    |       Dario Haener |
 
