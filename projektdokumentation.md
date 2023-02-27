@@ -4,10 +4,10 @@
 
 | Datum | Version | Zusammenfassung                                              |
 | ----- | ------- | ------------------------------------------------------------ |
-|       | 0.0.1   | ✍️ Jedes Mal, wenn Sie an dem Projekt arbeiten, fügen Sie hier eine neue Zeile ein und beschreiben in *einem* Satz, was Sie erreicht haben. |
-|       | 0.0.2   |                                                              |
-|       | 0.0.3   |                                                              |
-|       | 0.0.4   |                                                              |
+| 23.2.23      | 0.0.1   | Datenbank mit Applikation verbunden                                                             |
+| 24.2.23      | 0.0.2   | Admin login und normales login programmiert                                                             |
+| 25.2.23      | 0.0.3   | Spiel und Leaderboard programmiert                                                             |
+| 26.2.23      | 1.0.0   | Allgemeine verbesserungen                                                             |
 
 
 # 0 Ihr Projekt
