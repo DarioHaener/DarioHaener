@@ -5,14 +5,14 @@
 | Datum | Version | Zusammenfassung                                              |
 | ----- | ------- | ------------------------------------------------------------ |
 | 23.2.23      | 0.0.1   | Datenbank mit Applikation verbunden.                                                             |
-| 24.2.23      | 0.0.2   | Admin login und normales login programmiert.                                                             |
+| 24.2.23      | 0.0.2   | Admin Login und normales Login programmiert.                                                             |
 | 25.2.23      | 0.0.3   | Spiel und Leaderboard programmiert.                                                             |
-| 26.2.23      | 1.0.0   | Allgemeine verbesserungen.                                                             |
+| 26.2.23      | 1.0.0   | Allgemeine Verbesserungen.                                                             |
 
 
 # 0 Ihr Projekt
 
-Glücksrad Wortratespiel bei welchem Woerter in einem Gitter erraten müssen und so Geldbetraege vom Gluecksrad gewinnen kann.
+Glücksrad Wortratespiel bei welchem Wörter in einem Gitter erraten müssen und so Geldbetraege vom Glücksrad gewinnen kann.
 
 # 1 Analyse
 
@@ -51,25 +51,25 @@ Mithilfe der Firebase Firestore dokumentation konnte ich die Datenbank in einem 
 | E    |Muss               |Rand      |Als Benutzer möchte ich das Leaderboard sehen um mich mit anderen zu vergleichen.|
 | F    |Muss               |Funktional      |Als Administrator möchte ich mich mit einem login anmelden.|
 | G    |Muss               |Funktional      |Als Benutzer möchte ich den korrekten Geldbetrag bekommen, wenn ich das Wort richtig rate.|
-| H    |Muss               |Funktional      |Als Benutzer möchte ich das jetzige Spiel immer das Jetzige Spiel beenden koennen und die Daten auf dem Leaderboard anzeigen lassen.|
-| I    |Muss               |Funktional      |Als Administrator möchte ich gewisse Leaderboard eintraege loeschen koennenn.|
+| H    |Muss               |Funktional      |Als Benutzer möchte ich das jetzige Spiel immer das Jetzige Spiel beenden können und die Daten auf dem Leaderboard anzeigen lassen.|
+| I    |Muss               |Funktional      |Als Administrator möchte ich gewisse Leaderboard Einträge löschen kennen.|
 
 # 4.2 Testfälle
 
 | TC-№ | Vorbereitung | Eingabe | Erwartete Ausgabe |
 | ---- | ------------ | ------- | ----------------- |
 | A.1  |Spiel gestartet|Glücksrad drehen|Preis wird angezeigt|
-| A.2  |Spiel gestartet|Glücksrad drehen und Buchstabe richtig geraten| Betrag wird hinzugefuegt |
-| B.1  |Spiel gestartet|Richtiger Buchstabe|Gesuchtes Wort wird gruen|
+| A.2  |Spiel gestartet|Glücksrad drehen und Buchstabe richtig geraten| Betrag wird hinzugefügt |
+| B.1  |Spiel gestartet|Richtiger Buchstabe|Gesuchtes Wort wird grün|
 | B.2  |Spiel gestartet|Falscher Buchstabe|Gesuchtes Wort wird rot|
-| C.1  |Als Administrator angemeldet|"ADD" gedrueckt|Wort wird hinzugefuegt|
-| C.2  |Als Administrator angemeldet|"DELETE" gedrueckt|Wort wird geloescht|
+| C.1  |Als Administrator angemeldet |"ADD" gedrückt |Wort wird hinzugefügt|
+| C.2  |Als Administrator angemeldet |"DELETE" gedrückt |Wort wird gelöscht|
 | D.1 | Benutzer angemeldet | - | Lebenspunkte und Kontostand werden immer angezeigt |
 | E.1 | Benutzer angemeldet | - | Leaderboard wird immer dargestellt |
-| F.1 | Noch nicht angemeldet | Richtiges ADmin passwort und Name ingegeben | Als Admin angemeldet  |
-| G.1 | Spiel gestartet  | Richtiges Wort geraten | Korrekter Geldbetrag wird zum Kontostand hinzugefuegt |
-| H.1 | Spiel gestartet | "End Game" druecken| Daten werden in das Leaderboard uebernommen |
-| I.1 | Als Administrator angemeldet | "DELETE" bei LEaderboard gedrueckt| Leaderboard eingabe wird geloescht |
+| F.1 | Noch nicht angemeldet | Richtiges Admin Passwort und Name eingegeben | Als Admin angemeldet  |
+| G.1 | Spiel gestartet  | Richtiges Wort geraten | Korrekter Geldbetrag wird zum Kontostand hinzugefügt |
+| H.1 | Spiel gestartet | "End Game" drücken| Daten werden in das Leaderboard übernommen |
+| I.1 | Als Administrator angemeldet | "DELETE" bei Leaderboard gedrückt| Leaderboard Eingabe wird gelöscht |
 
 
 # 5 Prototyp
@@ -109,7 +109,7 @@ Quiz
 | C    | ja  | admin.js                                          |
 | D    | ja  | game.js                                          |
 | E    | ja  | game.js                                          |
-| F    | ja  | idnex.js                                          |
+| F    | ja  | index.js                                          |
 | G    | ja  | game.js                                          |
 | H    | ja  | game.js                                          |
 | I    | ja  | admin.js                                          |
