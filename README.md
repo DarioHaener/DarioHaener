@@ -1,3 +1,3 @@
 # DarioHaener_LB151
 
-npm install
+Projekt herunterladen im terminal `npm install` schreiben und dann mit `npm dev run` die Applikation starten.
