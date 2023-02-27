@@ -68,7 +68,7 @@ Mithilfe der Firebase Firestore dokumentation konnte ich die Datenbank in einem 
 | E.1 | Benutzer angemeldet | - | Leaderboard wird immer dargestellt |
 | F.1 | Noch nicht angemeldet | Richtiges ADmin passwort und Name ingegeben | Als Admin angemeldet  |
 | G.1 | Spiel gestartet  | Richtiges Wort geraten | Korrekter Geldbetrag wird zum Kontostand hinzugefuegt |
-| H.1 | Spiel gestartet | "End Game" druecken| Daten werden in das LEaderboard uebernommen |
+| H.1 | Spiel gestartet | "End Game" druecken| Daten werden in das Leaderboard uebernommen |
 | I.1 | Als Administrator angemeldet | "DELETE" bei LEaderboard gedrueckt| Leaderboard eingabe wird geloescht |
 
 
