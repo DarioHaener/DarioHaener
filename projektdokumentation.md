@@ -12,7 +12,7 @@
 
 # 0 Ihr Projekt
 
-Glücksrad Wortratespiel bei welchem Wörter in einem Gitter erraten müssen und so Geldbetraege vom Glücksrad gewinnen kann.
+Glücksrad Wortratespiel bei welchem Wörter in einem Gitter erraten werden müssen und man so Geldbetraege vom Glücksrad gewinnen kann.
 
 # 1 Analyse
 
@@ -47,7 +47,7 @@ Mithilfe der Firebase Firestore dokumentation konnte ich die Datenbank in einem 
 | A    |Muss               |Funktional      |Als Benutzer möchte ich das Glücksrad drehen können um einen gewinn oder verlust zu machen.|
 | B    |Muss               |Qualität      |Als Benutzer möchte ich mitgeteilt werden wann ich einen Buchstaben richtig oder falsch geraten habe|
 | C    |Muss               |Funktional      |Als Administrator möchte ich Phrasen und Wörter bearbeiten.|
-| D    |Muss               |Rand        |Als Benutzer möchte ich meinen Kontostand und Lebenspunkt immer sehen.|
+| D    |Muss               |Rand        |Als Benutzer möchte ich meinen Kontostand und Lebenspunkte immer sehen.|
 | E    |Muss               |Rand      |Als Benutzer möchte ich das Leaderboard sehen um mich mit anderen zu vergleichen.|
 | F    |Muss               |Funktional      |Als Administrator möchte ich mich mit einem login anmelden.|
 | G    |Muss               |Funktional      |Als Benutzer möchte ich den korrekten Geldbetrag bekommen, wenn ich das Wort richtig rate.|
@@ -137,7 +137,7 @@ YouTube: https://youtu.be/wNLdfM9rYpk
 
 # 8.1 Fazit
 
-Alle Testfälle sind positiv ausgefallen und fast alle Vorgaben sind erfuellt. Das Spiel zu programmieren viel mir eher leicht, da ich viel spass daran hatte und bereits mit Datenbanken gearbeitet habe. Wobei ich jedoch schwiergkeiten hatte war mich in next.js einzuarbeiten. Da ich bisher nur mit React programmiert habe. Da React jedoch ein betsnadteil von next.s ist konnte ich diese Problem schnell ueberwinden.
+Alle Testfälle sind positiv ausgefallen und fast alle Vorgaben sind erfüllt. Das Spiel zu programmieren viel mir eher leicht, da ich viel Spass daran hatte und bereits mit Datenbanken gearbeitet habe. Wobei ich jedoch Schwierigkeiten hatte, war mich in next.js einzuarbeiten. Da ich bisher nur mit React programmiert habe. Da React jedoch ein Bestandteil von next.s ist konnte ich diese Problem schnell überwinden.
 
 # 9 `README.md`
 
