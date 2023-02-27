@@ -12,7 +12,7 @@
 
 # 0 Ihr Projekt
 
-✍️ Glücksrad Wortratespiel bei welchem Redewendungen in einem Gitter erraten müssen.
+✍️ Glücksrad Wortratespiel bei welchem Woerter in einem Gitter erraten müssen und so Geldbetraege vom Gluecksrad gewinnen kann.
 
 # 1 Analyse
 
@@ -42,8 +42,8 @@ Tier 4 (Dataserver): Firebase
 
 | US-№ | Verbindlichkeit | Typ  | Beschreibung                       |
 | ---- | --------------- | ---- | ---------------------------------- |
-| A    |Muss               |Funktional      |Als Benutzer möchte ich das Glücksrad drehen können um das Spiel zu spielen|
-| B    |Muss               |Funktional      |Als Benutzer möchte ich meine Gewinne einlösen|
+| A    |Muss               |Funktional      |Als Benutzer möchte ich das Glücksrad drehen können um einen gewinn oder verlust zu machen|
+| B    |Muss               |Funktional      |Als Benutzer möchte ich wissen wann ich einen Buchstaben falsch doer richtig geraten habe|
 | C    |Muss               |Funktional      |Als Administrator möchte ich Phrasen und Wörter bearbeiten|
 | D    |Muss               |Qualität        |Als Benutzer möchte ich meinen Kontostand und Lebenspunkt immer sehen|
 | E    |Muss               |Funktional      |Als Benutzer möchte ich das Leaderboard sehen um mich mit anderen zu vergleichen|
@@ -74,14 +74,31 @@ Tier 4 (Dataserver): Firebase
 
 | User Story | Datum | Beschreibung |
 | ---------- | ----- | ------------ |
-| ...        |       |              |
+| A      |       |              |
+| B      |       |              |
+| C      |       |              |
+| D      |       |              |
+| E      |       |              |
+| F      |       |              |
+| G      |       |              |
+| H      |       |              |
+| I      |       |              |
+| J      |       |              |
 
 # 7 Projektdokumentation
 
 | US-№ | Erledigt? | Entsprechende Code-Dateien oder Erklärung |
 | ---- | --------- | ----------------------------------------- |
-| 1    | ja / nein |                                           |
-| ...  |           |                                           |
+| A    | ja  | game.js                                           |
+| B    | ja  | game.js                                          |
+| C    | ja  | admin.js                                          |
+| D    | ja  | game.js                                          |
+| E    | ja  | game.js                                          |
+| F    | ja  | idnex.js                                          |
+| G    | ja  | game.js                                          |
+| H    | ja  | game.js                                          |
+| I    | ja  | admin.js                                          |
+| J    | ja  | game.js                                          |
 
 # 8 Testprotokoll
 
