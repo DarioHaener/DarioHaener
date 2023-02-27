@@ -4,10 +4,10 @@
 
 | Datum | Version | Zusammenfassung                                              |
 | ----- | ------- | ------------------------------------------------------------ |
-| 23.2.23      | 0.0.1   | Datenbank mit Applikation verbunden                                                             |
-| 24.2.23      | 0.0.2   | Admin login und normales login programmiert                                                             |
-| 25.2.23      | 0.0.3   | Spiel und Leaderboard programmiert                                                             |
-| 26.2.23      | 1.0.0   | Allgemeine verbesserungen                                                             |
+| 23.2.23      | 0.0.1   | Datenbank mit Applikation verbunden.                                                             |
+| 24.2.23      | 0.0.2   | Admin login und normales login programmiert.                                                             |
+| 25.2.23      | 0.0.3   | Spiel und Leaderboard programmiert.                                                             |
+| 26.2.23      | 1.0.0   | Allgemeine verbesserungen.                                                             |
 
 
 # 0 Ihr Projekt
@@ -42,26 +42,32 @@ Tier 4 (Dataserver): Firebase
 
 | US-№ | Verbindlichkeit | Typ  | Beschreibung                       |
 | ---- | --------------- | ---- | ---------------------------------- |
-| A    |Muss               |Funktional      |Als Benutzer möchte ich das Glücksrad drehen können um einen gewinn oder verlust zu machen|
-| B    |Muss               |Funktional      |Als Benutzer möchte ich wissen wann ich einen Buchstaben falsch doer richtig geraten habe|
-| C    |Muss               |Funktional      |Als Administrator möchte ich Phrasen und Wörter bearbeiten|
-| D    |Muss               |Qualität        |Als Benutzer möchte ich meinen Kontostand und Lebenspunkt immer sehen|
-| E    |Muss               |Funktional      |Als Benutzer möchte ich das Leaderboard sehen um mich mit anderen zu vergleichen|
-| F    |Muss               |Funktional      |Als Administrator möchte ich mich mit einem login anmelden|
-| G    |Muss               |Funktional      |Als Benutzer möchte ich den Korrekten Geldbetrag bekommen, wenn ich einen Buchstaben richtig rate|
-| H    |Muss               |Funktional      |Als Benutzer möchte ich das jetzige Spiel immer das Jetzige Spiel beenden koennen und die Daten auf dem Leaderboard anzeigen lassen|
-| I    |Muss               |Funktional      |Als Administrator möchte ich gewisse Leaderboard eintraege loeschen koennenn|
-| J    |Muss               |Funktional      |Als Benutzer möchte ich mitgeteilt werden wann ich einen Buchstaben richtig geraten habe oder nciht|
+| A    |Muss               |Funktional      |Als Benutzer möchte ich das Glücksrad drehen können um einen gewinn oder verlust zu machen.|
+| B    |Muss               |Qualität      |Als Benutzer möchte ich mitgeteilt werden wann ich einen Buchstaben richtig geraten habe oder nicht|
+| C    |Muss               |Funktional      |Als Administrator möchte ich Phrasen und Wörter bearbeiten.|
+| D    |Muss               |Rand        |Als Benutzer möchte ich meinen Kontostand und Lebenspunkt immer sehen.|
+| E    |Muss               |Rand      |Als Benutzer möchte ich das Leaderboard sehen um mich mit anderen zu vergleichen.|
+| F    |Muss               |Funktional      |Als Administrator möchte ich mich mit einem login anmelden.|
+| G    |Muss               |Funktional      |Als Benutzer möchte ich den korrekten Geldbetrag bekommen, wenn ich das Wort richtig rate.|
+| H    |Muss               |Funktional      |Als Benutzer möchte ich das jetzige Spiel immer das Jetzige Spiel beenden koennen und die Daten auf dem Leaderboard anzeigen lassen.|
+| I    |Muss               |Funktional      |Als Administrator möchte ich gewisse Leaderboard eintraege loeschen koennenn.|
 
 # 4.2 Testfälle
 
 | TC-№ | Vorbereitung | Eingabe | Erwartete Ausgabe |
 | ---- | ------------ | ------- | ----------------- |
-| A.1  |Benutzer angemeldet|Rad drehen|Preis wird angezeigt|
-| A.2  |Kein Guthaben|Versuchen das Glücksrad drehen|Glücksrad wird nicht gedreht|
-| B.1  |Preis gewonnen |Gewinn einlösen|Gewinn wird eingelöst|
-| C.1  |Als Administrator angemeldet|Wort hinzufuegen|Wort wird hinzugefuegt|
-| C.2  |Als Administrator angemeldet|Phrase hinzufuegen|Phrase wird hinzugefuegt|
+| A.1  |Spiel gestartet|Glücksrad drehen|Preis wird angezeigt|
+| A.2  |Spiel gestartet|Glücksrad drehen und Buchstabe richtig geraten| Betrag wird hinzugefuegt |
+| B.1  |Spiel gestartet|Richtiger Buchstabe|Gesuchtes Wort wird gruen|
+| B.2  |Spiel gestartet|Falscher Buchstabe|Gesuchtes Wort wird rot|
+| C.1  |Als Administrator angemeldet|"ADD"|Wort wird hinzugefuegt|
+| C.2  |Als Administrator angemeldet|"DELETE"|Wort wird geloescht|
+| D.1 | Benutzer angemeldet | - | Lebenspunkte und Kontostand werden immer angezeigt |
+| E.1 | Benutzer angemeldet | - | Leaderboard wird immer dargestellt |
+| F.1 | Noch nicht angemeldet | Richtiges ADmin passwort und Name ingegeben | Als Admin angemeldet  |
+| G.1 | Spiel gestartet  | Richtiges Wort geraten | Korrekter Geldbetrag wird zum Kontostand hinzugefuegt |
+| H.1 | Spiel gestartet | "End Game" druecken| Daten werden in das LEaderboard uebernommen |
+| I.1 | Als Administrator angemeldet | "DELETE" bei LEaderboard gedrueckt| Leaderboard eingabe wird geloescht |
 
 
 # 5 Prototyp
@@ -82,16 +88,15 @@ Quiz
 
 | User Story | Datum | Beschreibung |
 | ---------- | ----- | ------------ |
-| A      |   25.2.23    |              |
-| B      |   26.2.23    |              |
-| C      |   24.2.23    |              |
-| D      |   24.2.23    |              |
-| E      |   25.2.23    |              |
-| F      |       |              |
-| G      |       |              |
-| H      |       |              |
-| I      |       |              |
-| J      |       |              |
+| A      |   25.2.23    |      gemacht        |
+| B      |   26.2.23    |      gemacht        |
+| C      |   24.2.23    |      gemacht        |
+| D      |   24.2.23    |      gemacht        |
+| E      |   25.2.23    |      gemacht        |
+| F      |   24.2.23    |      gemacht        |
+| G      |   25.2.23    |      gemacht        |
+| H      |   25.2.23    |      gemacht        |
+| I      |   24.2.23    |      gemacht        |
 
 # 7 Projektdokumentation
 
@@ -106,7 +111,6 @@ Quiz
 | G    | ja  | game.js                                          |
 | H    | ja  | game.js                                          |
 | I    | ja  | admin.js                                          |
-| J    | ja  | game.js                                          |
 
 # 8 Testprotokoll
 
