@@ -67,6 +67,14 @@ Tier 4 (Dataserver): Firebase
 # 5 Prototyp
 
 ✍️ Erstellen Sie Prototypen für das GUI (Admin-Interface und Quiz-Seite).
+Admin
+
+![Admin](https://user-images.githubusercontent.com/69902881/221517969-aef33b27-0e91-40b6-baa8-103ef934f54f.JPG)
+
+Quiz
+
+![GUI](https://user-images.githubusercontent.com/69902881/221518051-eb07f8bc-787e-4362-aad9-ac1dd2915bef.JPG)
+
 
 # 6 Implementation
 
@@ -74,11 +82,11 @@ Tier 4 (Dataserver): Firebase
 
 | User Story | Datum | Beschreibung |
 | ---------- | ----- | ------------ |
-| A      |       |              |
-| B      |       |              |
-| C      |       |              |
-| D      |       |              |
-| E      |       |              |
+| A      |   25.2.23    |              |
+| B      |   26.2.23    |              |
+| C      |   24.2.23    |              |
+| D      |   24.2.23    |              |
+| E      |   25.2.23    |              |
 | F      |       |              |
 | G      |       |              |
 | H      |       |              |
