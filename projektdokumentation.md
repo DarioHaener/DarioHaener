@@ -54,6 +54,7 @@ Mithilfe der Firebase Firestore dokumentation konnte ich die Datenbank in einem 
 | H    |Muss               |Funktional      |Als Benutzer möchte ich das jetzige Spiel immer das Jetzige Spiel beenden können und die Daten auf dem Leaderboard anzeigen lassen.|
 | I    |Muss               |Funktional      |Als Administrator möchte ich gewisse Leaderboard Einträge löschen können.|
 | J    |Muss               |Funktional      |Als Benutzer möchte ich Vokale kaufen können.|
+|K |Muss| Funktional | Als Benutzer möchte ich sehen welche Buchstaben ich falsch geraten habe, damit ich sie nicht nochmals rate |
 
 # 4.2 Testfälle
 
@@ -73,6 +74,7 @@ Mithilfe der Firebase Firestore dokumentation konnte ich die Datenbank in einem 
 | H.1 | Spiel gestartet | "End Game" drücken| Daten werden in das Leaderboard übernommen |
 | I.1 | Als Administrator angemeldet | "DELETE" bei Leaderboard gedrückt| Leaderboard Eingabe wird gelöscht |
 | J.1 | Spiel gestartet | Auf "Purchase" gedrückt | Man kann einen Vokal eingeben |
+| K.1 | Spiel gestartet | Falscher Buchstabe geraten | Buchstabe wird in Liste aufgenommen und angezeigt |
 
 
 # 5 Prototyp
@@ -102,6 +104,8 @@ Quiz
 | G      |   25.2.23    |      gemacht        |
 | H      |   25.2.23    |      gemacht        |
 | I      |   24.2.23    |      gemacht        |
+| J      |   25.2.23    |      gemacht        |
+| K      |   25.2.23    |      gemacht        |
 
 # 7 Projektdokumentation
 
@@ -116,6 +120,8 @@ Quiz
 | G    | ja  | game.js                                          |
 | H    | ja  | game.js                                          |
 | I    | ja  | admin.js                                          |
+| J    | ja  | game.js                                          |
+| K    | ja  | game.js                                          |
 
 # 8 Testprotokoll
 
@@ -138,6 +144,8 @@ YouTube: https://youtu.be/wNLdfM9rYpk
 | G.2  |   27.2.23    |      OK    |       Dario Haener |
 | H.1  |   27.2.23    |      OK    |       Dario Haener |
 | I.1  |   27.2.23    |      OK    |       Dario Haener |
+| J.1  |   27.2.23    |      OK    |       Dario Haener |
+| K.1  |   27.2.23    |      OK    |       Dario Haener |
 
 # 8.1 Fazit
 
