@@ -27,10 +27,10 @@ Glücksrad Wortratespiel bei welchem Wörter in einem Gitter erraten werden müs
 
 ✍️ Beschreiben Sie für dieselben Tiers, welche Programmiersprache bzw. Technologie Sie verwenden möchten.
 
-Tier 1 (Presentation): Next.js, CSS, HTML
-Tier 2 (Webserver): Next.js
-Tier 3 (Application Server): Next.js
-Tier 4 (Dataserver): Firebase
+* Tier 1 (Presentation): Next.js, CSS, HTML
+* Tier 2 (Webserver): Next.js
+* Tier 3 (Application Server): Next.js
+* Tier 4 (Dataserver): Firebase
 
 # 3 Datenbank
 
