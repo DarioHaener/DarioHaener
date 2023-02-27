@@ -80,6 +80,7 @@ Mithilfe der Firebase Firestore dokumentation konnte ich die Datenbank in einem 
 # 5 Prototyp
 
 ✍️ Erstellen Sie Prototypen für das GUI (Admin-Interface und Quiz-Seite).
+
 Admin
 
 ![Admin](https://user-images.githubusercontent.com/69902881/221517969-aef33b27-0e91-40b6-baa8-103ef934f54f.JPG)
