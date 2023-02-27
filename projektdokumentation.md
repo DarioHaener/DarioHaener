@@ -72,6 +72,7 @@ Mithilfe der Firebase Firestore dokumentation konnte ich die Datenbank in einem 
 | G.2 | Spiel gestartet  | Falsches Wort geraten | Korrekter Geldbetrag wird vom Kontostand abgezogen |
 | H.1 | Spiel gestartet | "End Game" drücken| Daten werden in das Leaderboard übernommen |
 | I.1 | Als Administrator angemeldet | "DELETE" bei Leaderboard gedrückt| Leaderboard Eingabe wird gelöscht |
+| J.1 | Spiel gestartet | Auf "Purchase" gedrückt | Man kann einen Vokal eingeben |
 
 
 # 5 Prototyp
