@@ -114,7 +114,9 @@ Quiz
 
 # 8 Testprotokoll
 
-✍️ Fügen Sie hier den Link zu dem Video ein, welches den Testdurchlauf dokumentiert.
+Download: https://github.com/DarioHaener/DarioHaener_LB151/blob/main/DarioHaener_LB151.mp4
+
+YouTube: https://youtu.be/wNLdfM9rYpk
 
 | TC-№ | Datum | Resultat | Tester |
 | ---- | ----- | -------- | ------ |
