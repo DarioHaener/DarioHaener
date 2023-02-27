@@ -8,9 +8,7 @@
 |       | 0.0.2   |                                                              |
 |       | 0.0.3   |                                                              |
 |       | 0.0.4   |                                                              |
-|       | 0.0.5   |                                                              |
-|       | 0.0.6   |                                                              |
-|       | 1.0.0   |                                                              |
+
 
 # 0 Ihr Projekt
 
@@ -47,8 +45,13 @@ Tier 4 (Dataserver): Firebase
 | A    |Muss               |Funktional      |Als Benutzer möchte ich das Glücksrad drehen können um das Spiel zu spielen|
 | B    |Muss               |Funktional      |Als Benutzer möchte ich meine Gewinne einlösen|
 | C    |Muss               |Funktional      |Als Administrator möchte ich Phrasen und Wörter bearbeiten|
-| D    |Muss               |Qualität        |Als Benutzer möchte ich eine übersichtliche GUI haben, damit ich mich zurechtfinden kann|
-| E    |Muss               |Rand            |Als Benutzer möchte ich auf dem Liederboard sehen|
+| D    |Muss               |Qualität        |Als Benutzer möchte ich meinen Kontostand und Lebenspunkt immer sehen|
+| E    |Muss               |Funktional      |Als Benutzer möchte ich das Leaderboard sehen um mich mit anderen zu vergleichen|
+| F    |Muss               |Funktional      |Als Administrator möchte ich mich mit einem login anmelden|
+| G    |Muss               |Funktional      |Als Benutzer möchte ich den Korrekten Geldbetrag bekommen, wenn ich einen Buchstaben richtig rate|
+| H    |Muss               |Funktional      |Als Benutzer möchte ich das jetzige Spiel immer das Jetzige Spiel beenden koennen und die Daten auf dem Leaderboard anzeigen lassen|
+| I    |Muss               |Funktional      |Als Administrator möchte ich gewisse Leaderboard eintraege loeschen koennenn|
+| J    |Muss               |Funktional      |Als Benutzer möchte ich mitgeteilt werden wann ich einen Buchstaben richtig geraten habe oder nciht|
 
 # 4.2 Testfälle
 
@@ -60,7 +63,6 @@ Tier 4 (Dataserver): Firebase
 | C.1  |Als Administrator angemeldet|Wort hinzufuegen|Wort wird hinzugefuegt|
 | C.2  |Als Administrator angemeldet|Phrase hinzufuegen|Phrase wird hinzugefuegt|
 
-✍️ Die Nummer hat das Format `N.m`, wobei `N` die Nummer der User Story ist, die der Testfall abdeckt, und `m` von `1` an nach oben gezählt. Beispiel: Der dritte Testfall, der die zweite User Story abdeckt, hat also die Nummer `2.3`.
 
 # 5 Prototyp
 
