@@ -43,7 +43,7 @@ Tier 4 (Dataserver): Firebase
 | US-№ | Verbindlichkeit | Typ  | Beschreibung                       |
 | ---- | --------------- | ---- | ---------------------------------- |
 | A    |Muss               |Funktional      |Als Benutzer möchte ich das Glücksrad drehen können um einen gewinn oder verlust zu machen.|
-| B    |Muss               |Qualität      |Als Benutzer möchte ich mitgeteilt werden wann ich einen Buchstaben richtig geraten habe oder nicht|
+| B    |Muss               |Qualität      |Als Benutzer möchte ich mitgeteilt werden wann ich einen Buchstaben richtig oder falsch geraten habe|
 | C    |Muss               |Funktional      |Als Administrator möchte ich Phrasen und Wörter bearbeiten.|
 | D    |Muss               |Rand        |Als Benutzer möchte ich meinen Kontostand und Lebenspunkt immer sehen.|
 | E    |Muss               |Rand      |Als Benutzer möchte ich das Leaderboard sehen um mich mit anderen zu vergleichen.|
@@ -118,14 +118,25 @@ Quiz
 
 | TC-№ | Datum | Resultat | Tester |
 | ---- | ----- | -------- | ------ |
-| 1.1  |       |          |        |
-| ...  |       |          |        |
+| A.1  |   27.2.23    |    OK      |Dario Haener        |
+| A.2  |   27.2.23    |      OK    |Dario Haener        |
+| B.1  |   27.2.23    |        OK  |  Dario Haener      |
+| B.2  |   27.2.23    |          OK|       Dario Haener |
+| C.1  |   27.2.23    |       OK   |       Dario Haener |
+| C.2  |   27.2.23   |       OK   |       Dario Haener |
+| D.1  |   27.2.23    |      OK    |       Dario Haener |
+| E.1  |   27.2.23    |      OK    |       Dario Haener |
+| F.1  |   27.2.23    |      OK    |       Dario Haener |
+| G.1  |   27.2.23    |      OK    |       Dario Haener |
+| H.1  |   27.2.23    |      OK    |       Dario Haener |
+| I.1  |   27.2.23    |      OK    |       Dario Haener |
 
-✍️ Vergessen Sie nicht, ein Fazit hinzuzufügen, welches das Test-Ergebnis einordnet.
+# 8.1 Fazit
+
+Alle Testfälle sind positiv ausgefallen und fast alle Vorgaben sind erfuellt. Das Spiel zu programmieren viel mir eher leicht, da ich viel spass daran hatte und bereits mit Datenbanken gearbeitet habe. Wobei ich jedoch schwiergkeiten hatte war mich in next.js einzuarbeiten. Da ich bisher nur mit React programmiert habe. Da React jedoch ein betsnadteil von next.s ist konnte ich diese Problem schnell ueberwinden.
 
 # 9 `README.md`
 
-✍️ Beschreiben Sie ausführlich in einer README.md, wie Ihre Applikation gestartet und ausgeführt wird. Legen Sie eine geeignete Möglichkeit (Skript, Export, …) bei, Ihre Datenbank wiederherzustellen.
 
 # 10 Allgemeines
 
