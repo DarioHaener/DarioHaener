@@ -36,6 +36,8 @@ Tier 4 (Dataserver): Firebase
 
 ✍️ Wie steuern Sie Ihre Datenbank an? Wie ist das Interface aufgebaut? 
 
+Mithilfe der Firebase Firestore dokumentation konnte ich die Datenbank in einem js file initialisieren und dadurch bei der game page ansprechen sowie auf der admin page. In der game page wird das Leaderboard aktualisiert, in der admin page kann dieses Bearbeitet werden. in der Admin page kann auch die Wort Liste bearbeitet werden. In der login page wir mithilfe der Datenbank validiert ob das Admin login korrekt ist.
+
 
 
 # 4.1 User Stories
@@ -60,8 +62,8 @@ Tier 4 (Dataserver): Firebase
 | A.2  |Spiel gestartet|Glücksrad drehen und Buchstabe richtig geraten| Betrag wird hinzugefuegt |
 | B.1  |Spiel gestartet|Richtiger Buchstabe|Gesuchtes Wort wird gruen|
 | B.2  |Spiel gestartet|Falscher Buchstabe|Gesuchtes Wort wird rot|
-| C.1  |Als Administrator angemeldet|"ADD"|Wort wird hinzugefuegt|
-| C.2  |Als Administrator angemeldet|"DELETE"|Wort wird geloescht|
+| C.1  |Als Administrator angemeldet|"ADD" gedrueckt|Wort wird hinzugefuegt|
+| C.2  |Als Administrator angemeldet|"DELETE" gedrueckt|Wort wird geloescht|
 | D.1 | Benutzer angemeldet | - | Lebenspunkte und Kontostand werden immer angezeigt |
 | E.1 | Benutzer angemeldet | - | Leaderboard wird immer dargestellt |
 | F.1 | Noch nicht angemeldet | Richtiges ADmin passwort und Name ingegeben | Als Admin angemeldet  |
