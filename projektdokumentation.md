@@ -12,7 +12,7 @@
 
 # 0 Ihr Projekt
 
-✍️ Glücksrad Wortratespiel bei welchem Woerter in einem Gitter erraten müssen und so Geldbetraege vom Gluecksrad gewinnen kann.
+Glücksrad Wortratespiel bei welchem Woerter in einem Gitter erraten müssen und so Geldbetraege vom Gluecksrad gewinnen kann.
 
 # 1 Analyse
 
